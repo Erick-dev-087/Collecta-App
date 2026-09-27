@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:shelf/shelf.dart';
 
-import 'errors.dart';
+import '../utils/errors.dart';
 
 /// Shared helpers for shelf route handlers.
 

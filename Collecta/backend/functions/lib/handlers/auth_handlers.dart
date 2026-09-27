@@ -18,8 +18,10 @@ Router authRoutes(AuthService auth) {
       uid: uid,
       email: requireString(data['email'], 'email'),
       fullName: requireString(data['fullName'], 'fullName'),
-      organizationName:
-          requireString(data['organizationName'], 'organizationName'),
+      organizationName: requireString(
+        data['organizationName'],
+        'organizationName',
+      ),
       phone: optionalString(data['phone'], 'phone'),
     );
     return ok(result);
