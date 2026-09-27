@@ -2,7 +2,6 @@
 .dart_tool/
 build/
 .packages
-pubspec.lock
 
 # Firebase local
 .env
