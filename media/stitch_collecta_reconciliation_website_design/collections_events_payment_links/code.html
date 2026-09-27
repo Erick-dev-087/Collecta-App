@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"mint-surface":"#ECFDF5","background":"#faf8ff","on-primary":"#ffffff","secondary-fixed":"#4dffb2","primary":"#004d27","slate-border":"#E2E8F0","on-secondary-container":"#007149","outline-variant":"#bec9be","status-pending-text":"#1D4ED8","surface-bright":"#faf8ff","on-secondary":"#ffffff","inverse-on-surface":"#eef0ff","on-error-container":"#93000a","tertiary-container":"#004fd1","tertiary-fixed-dim":"#b4c5ff","slate-subtle":"#64748B","on-primary-fixed":"#00210e","surface-container-high":"#e2e7ff","inverse-surface":"#283044","secondary":"#006c46","on-error":"#ffffff","error-container":"#ffdad6","on-surface-variant":"#3f4940","status-matched-bg":"#ECFDF5","secondary-fixed-dim":"#00e297","surface-container":"#eaedff","surface-container-lowest":"#ffffff","outline":"#6f7a70","on-tertiary":"#ffffff","on-surface":"#131b2e","status-discrepancy-text":"#B91C1C","surface-canvas":"#F8FAFC","status-discrepancy-bg":"#FEF2F2","mint-neon":"#00E599","surface-dim":"#d2d9f4","primary-container":"#006837","on-secondary-fixed-variant":"#005234","surface-tint":"#0b6d3b","secondary-container":"#3ffdae","on-tertiary-fixed":"#00174b","on-background":"#131b2e","primary-fixed-dim":"#83d99c","on-tertiary-container":"#c4d0ff","surface":"#faf8ff","on-primary-container":"#8ee4a6","on-tertiary-fixed-variant":"#003ea8","on-primary-fixed-variant":"#00522a","surface-container-highest":"#dae2fd","tertiary-fixed":"#dbe1ff","status-pending-bg":"#EFF6FF","emerald-hover":"#00522B","on-secondary-fixed":"#002112","surface-container-low":"#f2f3ff","inverse-primary":"#83d99c","surface-panel":"#FFFFFF","slate-ink":"#0F172A","error":"#ba1a1a","status-settled-bg":"#F8FAFC","primary-fixed":"#9ef6b6","surface-variant":"#dae2fd","status-settled-text":"#334155","status-matched-text":"#047857","emerald-deep":"#006837","tertiary":"#003a9f"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-mobile":"1rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin":"2rem","gutter-mobile":"0.75rem","space-xl":"2rem","space-lg":"1.5rem"},"fontFamily":{"currency-display":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Inter"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"tabular-mono":["Inter"],"body-md":["Inter"]},"fontSize":{"currency-display":["36px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"800"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"800"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"700"}],"tabular-mono":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"-0.005em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-panel shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-panel"><img alt="Modern geometric fintech logo for Collecta featuring interlocking circular arcs and a reconciliation checkmark forming an open letter C, rendered in deep emerald green and vibrant mint.. Brand logo. - Primary color: #006837
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VPVOxYn8j5ejbvUr0LBv7-VlNHTq_krWwI4SSO6OBxDWqzDdA9AarAlV-g680pZwbxilJOT8KWd-R2Mb8q9TqT3DFK-9JDng7vf7DJyQDbtiDhvWmWkcDKrEZayKFjCi9Ok5CNcUXdngrY4zA9rgqHoqeJVLafNpH6BQtUcCMRDhr0iC_z0moPKi7hynNd1b7IWxiqhIg0My3_Vs33rZ2AZHKEt_EzxZbjcf0oYHou"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Collecta</span><span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">FinOps Engine</span></div></div><div class="px-space-md pt-space-sm pb-space-sm"><div class="p-space-sm bg-surface-canvas rounded-xl flex items-center justify-between shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center gap-space-sm overflow-hidden"><div class="w-9 h-9 rounded-lg bg-mint-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary text-[20px]">church</span></div><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-slate-ink truncate">PCEA Kimuchu</span><span class="font-label-sm text-label-sm text-slate-subtle truncate">Institutional Portal</span></div></div><span class="material-symbols-outlined text-slate-subtle text-[18px]">unfold_more</span></div></div><div class="px-space-md py-space-sm"><button class="w-full h-11 bg-primary-container hover:bg-emerald-hover text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-space-sm shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] transition-all" type="button"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>New Collection</span></button></div><nav class="px-space-md pt-space-sm space-y-1" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary-container text-on-primary font-label-lg rounded-xl" data-path="collections" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Collections</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="members" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Members</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="ledger" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Ledger</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="flex flex-col"><div class="px-space-md py-space-sm space-y-1"><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="support" href="#"><span class="material-symbols-outlined text-[18px]">help_center</span><span>Support</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-status-discrepancy-bg hover:text-status-discrepancy-text transition-colors" data-path="logout" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span>Logout</span></a></div><div class="p-space-md bg-surface-canvas"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-headline-sm text-headline-sm text-on-primary shrink-0">S</div><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-slate-ink truncate">Stephen Deron</span><span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Treasurer</span></div></div></div></div></aside><div class="pl-72 min-h-screen bg-surface flex flex-col"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-panel/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="Modern geometric fintech logo for Collecta featuring interlocking circular arcs and a reconciliation checkmark forming an open letter C, rendered in deep emerald green and vibrant mint.. Brand logo. - Primary color: #006837
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VPVOxYn8j5ejbvUr0LBv7-VlNHTq_krWwI4SSO6OBxDWqzDdA9AarAlV-g680pZwbxilJOT8KWd-R2Mb8q9TqT3DFK-9JDng7vf7DJyQDbtiDhvWmWkcDKrEZayKFjCi9Ok5CNcUXdngrY4zA9rgqHoqeJVLafNpH6BQtUcCMRDhr0iC_z0moPKi7hynNd1b7IWxiqhIg0My3_Vs33rZ2AZHKEt_EzxZbjcf0oYHou"/><div class="hidden sm:flex items-center gap-space-xs font-label-sm text-label-sm text-slate-subtle"><span class="hover:text-on-surface transition-colors">PCEA Kimuchu</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-slate-ink font-semibold">Audited Treasury Workspace</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-mint-neon"></span><span>M-Pesa STK Live</span></div><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface relative transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface flex-1"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1440px] w-full mx-auto space-y-space-lg">
+<!-- Top Management Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm uppercase tracking-wider">Treasury Receivables</span>
+<span class="w-1.5 h-1.5 rounded-full bg-slate-subtle opacity-40"></span>
+<span class="font-label-sm text-label-sm text-slate-subtle">Kimuchu Parish Account</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-slate-ink font-bold tracking-tight">Collections & Events</h1>
+<p class="font-body-md text-body-md text-slate-subtle max-w-2xl">Create and manage payment links, target quotas, and track member contributions in real-time with automated M-Pesa STK reconciliation.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-10 px-space-md bg-surface-panel hover:bg-surface-canvas text-slate-ink font-label-md text-label-md rounded-xl shadow-sm flex items-center gap-space-xs transition-all" id="open-filter-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-slate-subtle">filter_list</span>
+<span>Filter: All Active (4)</span>
+<span class="material-symbols-outlined text-[16px] text-slate-subtle">expand_more</span>
+</button>
+<button class="h-10 px-space-md bg-primary-container hover:bg-emerald-hover text-on-primary font-label-lg text-label-lg rounded-xl shadow-md flex items-center gap-space-xs transition-all" id="open-modal-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>+ Create New Collection</span>
+</button>
+</div>
+</div>
+<!-- Quick Insights Metrics Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="p-space-md bg-surface-panel rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">Gross Active Quota</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink mt-0.5">KES 1,330,000</div>
+<span class="font-label-sm text-label-sm text-status-matched-text font-medium">4 Active Initiatives</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">savings</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-panel rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">Collected Real-Time</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink mt-0.5">KES 729,000</div>
+<span class="font-label-sm text-label-sm text-slate-subtle">54.8% Settlement</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-status-pending-bg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-panel rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">STK Push Success Rate</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink mt-0.5">96.4%</div>
+<span class="font-label-sm text-label-sm text-status-matched-text font-medium">Safaricom Daraja V2</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">bolt</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-panel rounded-xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">Ledger Auto-Dispatched</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink mt-0.5">142 Members</div>
+<span class="font-label-sm text-label-sm text-slate-subtle">Instant WhatsApp Sync</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">send</span>
+</div>
+</div>
+</div>
+<!-- Collection Filter Bar & View Switcher -->
+<div class="p-space-sm bg-surface-panel rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="relative flex-1 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-subtle text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-3 text-body-md font-body-md bg-surface-canvas rounded-lg text-slate-ink placeholder-slate-subtle focus:outline-none" placeholder="Search collection by name, event, code..." type="text"/>
+</div>
+<div class="hidden sm:flex items-center gap-1.5 overflow-x-auto">
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm">All</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-sm text-label-sm transition-colors">Trips & Events</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-sm text-label-sm transition-colors">Capital Projects</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-sm text-label-sm transition-colors">Youth & Camps</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-sm text-label-sm transition-colors">Welfare</button>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end md:self-auto shrink-0">
+<span class="font-label-sm text-label-sm text-slate-subtle mr-1">Display:</span>
+<button class="p-2 rounded-lg bg-surface-canvas text-primary shadow-xs" id="view-grid-btn">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button class="p-2 rounded-lg text-slate-subtle hover:bg-surface-canvas hover:text-slate-ink transition-colors" id="view-list-btn">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+</div>
+<!-- Active Collections Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg" id="collections-container">
+<!-- CARD 1: Ngong Hills Trip -->
+<div class="bg-surface-panel rounded-xl shadow-md p-space-lg flex flex-col justify-between hover:shadow-lg transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary-fixed"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-mint-surface flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[26px]">hiking</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-slate-ink font-bold">Ngong Hills Trip</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-mint-neon"></span> Active
+                  </span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-subtle font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">event</span> 26 Aug 2026</span>
+<span>•</span>
+<span>Quota: KES 3,000 / member</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas hover:text-slate-ink">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Progress Bar & Analytics -->
+<div class="p-space-md bg-surface-canvas rounded-xl mb-space-md space-y-space-xs">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Total Collected</span>
+<div class="font-currency-display text-currency-display text-primary font-bold">
+                  KES 84,000 <span class="font-headline-sm text-headline-sm font-semibold text-slate-subtle">/ 150,000</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Attending</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink">28 <span class="font-body-md text-body-md text-slate-subtle font-normal">/ 50 members</span></div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full transition-all duration-500" style="width: 56%"></div>
+</div>
+<div class="flex items-center justify-between text-slate-subtle font-label-sm text-label-sm pt-0.5">
+<span>56% of campaign goal reached</span>
+<span class="text-status-matched-text font-semibold">22 remaining to target</span>
+</div>
+</div>
+<!-- Payment Link & Instant Tooling -->
+<div class="space-y-space-xs mb-space-md">
+<label class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider block">Sharable Payment Link</label>
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-canvas rounded-lg px-3 py-2 text-slate-ink font-tabular-mono text-tabular-mono truncate select-all">
+                collecta.co/pay/pcea-ngong-hills-2026
+              </div>
+<button class="h-9 px-3 bg-surface-panel hover:bg-surface-canvas text-slate-ink font-label-md text-label-md rounded-lg shadow-sm flex items-center gap-1 transition-colors" onclick="navigator.clipboard.writeText('https://collecta.co/pay/pcea-ngong-hills-2026'); alert('Payment link copied to clipboard!');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy</span>
+</button>
+<button class="h-9 px-3 bg-mint-surface hover:bg-secondary-fixed-dim text-status-matched-text font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" onclick="window.open('https://api.whatsapp.com/send?text=Please%20submit%20your%20contribution%20for%20Ngong%20Hills%20Trip%20via%20https://collecta.co/pay/pcea-ngong-hills-2026', '_blank')" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</button>
+<button class="h-9 w-9 bg-surface-panel hover:bg-surface-canvas text-slate-ink rounded-lg shadow-sm flex items-center justify-center transition-colors" onclick="document.getElementById('qr-modal-image').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Card Footer -->
+<div class="pt-space-sm flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="h-9 px-3 bg-mint-neon text-slate-ink font-label-md text-label-md rounded-lg shadow-sm hover:opacity-90 flex items-center gap-1.5 transition-all" onclick="document.getElementById('stk-trigger-dialog').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">cell_tower</span>
+<span>Trigger STK Push (22 Unpaid)</span>
+</button>
+<a class="h-9 px-3 bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</a>
+</div>
+<a class="h-9 px-3 text-primary hover:bg-mint-surface rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" href="#">
+<span>View Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- CARD 2: Church Building & Renovation Fund -->
+<div class="bg-surface-panel rounded-xl shadow-md p-space-lg flex flex-col justify-between hover:shadow-lg transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[26px]">foundation</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-slate-ink font-bold">Church Building & Renovation Fund</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-mint-neon"></span> Active
+                  </span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-subtle font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">event</span> Year 2026 Plan</span>
+<span>•</span>
+<span>Target: KES 10,000 / family</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas hover:text-slate-ink">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Progress Bar & Analytics -->
+<div class="p-space-md bg-surface-canvas rounded-xl mb-space-md space-y-space-xs">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Total Collected</span>
+<div class="font-currency-display text-currency-display text-primary font-bold">
+                  KES 480,000 <span class="font-headline-sm text-headline-sm font-semibold text-slate-subtle">/ 1,000,000</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Families Contributed</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink">48 <span class="font-body-md text-body-md text-slate-subtle font-normal">/ 100 units</span></div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full transition-all duration-500" style="width: 48%"></div>
+</div>
+<div class="flex items-center justify-between text-slate-subtle font-label-sm text-label-sm pt-0.5">
+<span>48% milestone met</span>
+<span class="text-slate-ink font-semibold">Phase 1 Sanctuary Roofing</span>
+</div>
+</div>
+<!-- Payment Link & Instant Tooling -->
+<div class="space-y-space-xs mb-space-md">
+<label class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider block">Sharable Payment Link</label>
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-canvas rounded-lg px-3 py-2 text-slate-ink font-tabular-mono text-tabular-mono truncate select-all">
+                collecta.co/pay/pcea-building-fund
+              </div>
+<button class="h-9 px-3 bg-surface-panel hover:bg-surface-canvas text-slate-ink font-label-md text-label-md rounded-lg shadow-sm flex items-center gap-1 transition-colors" onclick="navigator.clipboard.writeText('https://collecta.co/pay/pcea-building-fund'); alert('Building fund link copied!');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy</span>
+</button>
+<button class="h-9 px-3 bg-mint-surface hover:bg-secondary-fixed-dim text-status-matched-text font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" onclick="window.open('https://api.whatsapp.com/send?text=Church%20Building%20Fund:%20https://collecta.co/pay/pcea-building-fund', '_blank')" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</button>
+<button class="h-9 w-9 bg-surface-panel hover:bg-surface-canvas text-slate-ink rounded-lg shadow-sm flex items-center justify-center transition-colors" onclick="document.getElementById('qr-modal-image').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Card Footer -->
+<div class="pt-space-sm flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="h-9 px-3 bg-mint-neon text-slate-ink font-label-md text-label-md rounded-lg shadow-sm hover:opacity-90 flex items-center gap-1.5 transition-all" onclick="document.getElementById('stk-trigger-dialog').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">cell_tower</span>
+<span>Bulk STK Prompt</span>
+</button>
+<a class="h-9 px-3 bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</a>
+</div>
+<a class="h-9 px-3 text-primary hover:bg-mint-surface rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" href="#">
+<span>View Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- CARD 3: Youth Camp Retreat 2026 -->
+<div class="bg-surface-panel rounded-xl shadow-md p-space-lg flex flex-col justify-between hover:shadow-lg transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-tertiary"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-status-pending-bg flex items-center justify-center shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-[26px]">camping</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-slate-ink font-bold">Youth Camp Retreat 2026</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-mint-neon"></span> Active
+                  </span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-subtle font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">event</span> 12 Nov 2026</span>
+<span>•</span>
+<span>Target: KES 2,000 / youth</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas hover:text-slate-ink">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Progress Bar & Analytics -->
+<div class="p-space-md bg-surface-canvas rounded-xl mb-space-md space-y-space-xs">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Total Collected</span>
+<div class="font-currency-display text-currency-display text-primary font-bold">
+                  KES 45,000 <span class="font-headline-sm text-headline-sm font-semibold text-slate-subtle">/ 60,000</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Paid Registered</span>
+<div class="font-headline-sm text-headline-sm font-bold text-slate-ink">22 <span class="font-body-md text-body-md text-slate-subtle font-normal">/ 30 campers</span></div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-tertiary h-2.5 rounded-full transition-all duration-500" style="width: 75%"></div>
+</div>
+<div class="flex items-center justify-between text-slate-subtle font-label-sm text-label-sm pt-0.5">
+<span>75% target secured</span>
+<span class="text-status-matched-text font-semibold">8 slots remaining</span>
+</div>
+</div>
+<!-- Payment Link & Instant Tooling -->
+<div class="space-y-space-xs mb-space-md">
+<label class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider block">Sharable Payment Link</label>
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-canvas rounded-lg px-3 py-2 text-slate-ink font-tabular-mono text-tabular-mono truncate select-all">
+                collecta.co/pay/pcea-youth-retreat-26
+              </div>
+<button class="h-9 px-3 bg-surface-panel hover:bg-surface-canvas text-slate-ink font-label-md text-label-md rounded-lg shadow-sm flex items-center gap-1 transition-colors" onclick="navigator.clipboard.writeText('https://collecta.co/pay/pcea-youth-retreat-26'); alert('Camp link copied!');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy</span>
+</button>
+<button class="h-9 px-3 bg-mint-surface hover:bg-secondary-fixed-dim text-status-matched-text font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" onclick="window.open('https://api.whatsapp.com/send?text=Register%20for%20Youth%20Camp:%20https://collecta.co/pay/pcea-youth-retreat-26', '_blank')" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</button>
+<button class="h-9 w-9 bg-surface-panel hover:bg-surface-canvas text-slate-ink rounded-lg shadow-sm flex items-center justify-center transition-colors" onclick="document.getElementById('qr-modal-image').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Card Footer -->
+<div class="pt-space-sm flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="h-9 px-3 bg-mint-neon text-slate-ink font-label-md text-label-md rounded-lg shadow-sm hover:opacity-90 flex items-center gap-1.5 transition-all" onclick="document.getElementById('stk-trigger-dialog').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">cell_tower</span>
+<span>Send STK (8 Unpaid)</span>
+</button>
+<a class="h-9 px-3 bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit</span>
+</a>
+</div>
+<a class="h-9 px-3 text-primary hover:bg-mint-surface rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" href="#">
+<span>View Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- CARD 4: Benevolent Welfare Q1 -->
+<div class="bg-surface-panel rounded-xl shadow-md p-space-lg flex flex-col justify-between opacity-90 hover:opacity-100 transition-opacity relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-outline-variant"></div>
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-canvas flex items-center justify-center shrink-0 text-slate-subtle">
+<span class="material-symbols-outlined text-[26px]">volunteer_activism</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-slate-ink font-bold">Benevolent Welfare Q1</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-status-settled-bg text-status-settled-text font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Closed
+                  </span>
+</div>
+<div class="flex items-center gap-space-sm text-slate-subtle font-body-sm text-body-sm mt-0.5">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">event</span> Closed 31 March</span>
+<span>•</span>
+<span>Target: KES 1,000 / member</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas hover:text-slate-ink">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Progress Bar & Analytics -->
+<div class="p-space-md bg-surface-canvas rounded-xl mb-space-md space-y-space-xs">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Total Disbursed & Reconciled</span>
+<div class="font-currency-display text-currency-display text-slate-ink font-bold">
+                  KES 120,000 <span class="font-headline-sm text-headline-sm font-semibold text-status-matched-text">/ 120,000</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">Compliance</span>
+<div class="font-headline-sm text-headline-sm font-bold text-status-matched-text">100%</div>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-status-matched-text h-2.5 rounded-full" style="width: 100%"></div>
+</div>
+<div class="flex items-center justify-between text-slate-subtle font-label-sm text-label-sm pt-0.5">
+<span>Audit complete and locked</span>
+<span class="text-status-matched-text font-semibold">120 of 120 Accounts Cleared</span>
+</div>
+</div>
+<!-- Payment Link & Instant Tooling -->
+<div class="space-y-space-xs mb-space-md">
+<label class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider block">Archive Reference Link</label>
+<div class="flex items-center gap-space-xs">
+<div class="flex-1 bg-surface-canvas rounded-lg px-3 py-2 text-slate-subtle font-tabular-mono text-tabular-mono truncate">
+                collecta.co/archive/benevolent-welfare-q1
+              </div>
+<button class="h-9 px-3 bg-surface-panel hover:bg-surface-canvas text-slate-ink font-label-md text-label-md rounded-lg shadow-sm flex items-center gap-1 transition-colors" onclick="navigator.clipboard.writeText('https://collecta.co/archive/benevolent-welfare-q1');" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Card Footer -->
+<div class="pt-space-sm flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="h-9 px-3 bg-surface-canvas text-slate-subtle font-label-md text-label-md rounded-lg cursor-not-allowed flex items-center gap-1.5" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>Reconciled & Closed</span>
+</button>
+</div>
+<a class="h-9 px-3 text-slate-ink hover:bg-surface-canvas rounded-lg font-label-md text-label-md flex items-center gap-1 transition-colors" href="#">
+<span>Download Audit PDF</span>
+<span class="material-symbols-outlined text-[16px]">download</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Integrated Visual Gallery & Event Highlights Section -->
+<div class="bg-surface-panel rounded-xl shadow-md p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-slate-ink font-bold">Community & Event Media</h2>
+<p class="font-body-sm text-body-sm text-slate-subtle">Visual assets featured on institutional payment landing pages for members and donors.</p>
+</div>
+<button class="h-9 px-3 bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-md text-label-md rounded-lg flex items-center gap-1 self-start sm:self-auto transition-colors">
+<span class="material-symbols-outlined text-[16px]">upload_file</span>
+<span>Upload Event Media</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="group relative rounded-xl overflow-hidden shadow-sm aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Expansive scenic view of lush green Ngong Hills under an equatorial sky with rolling peaks and clear pathways, representing a church community hiking expedition. Clean modern photography with rich emerald grass tones and crisp daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBWdMWcY-FDI5mjEa_77qRxIxLOFWNGhVtVIB1po6WK6rnSJBWwMw6X_Cveaw3yV8fajLwOoHo6AUF3e-sCpo79FcyKKU0GoXdO1Bu_rKkQDBK69t05MRGDSk__MxAgvXxndj1SiTO0Lr-TtUuQ6KevfNzQLdajdKhe813OdB8kP0_un0p4kzT70oZAs2iQ79o0wSTD8TAwC-gBvvsZHZEmoqPAgKBkfCmWBzTrysWULIWpUEdq4bgiQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-ink/80 via-transparent to-transparent flex items-end p-space-sm">
+<span class="text-on-primary font-label-md text-label-md font-semibold">Ngong Hills Excursion 2026</span>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden shadow-sm aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Architectural modern church sanctuary sanctuary under renovation with timber truss ceiling and natural sunlight pouring through clean clerestory windows. Professional interior architecture shot in deep emerald green and slate tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd4CNYjA8zuOJUWausG1QEymixJZtHZgA-tin5TH8_b8dk1Aao7JWzLaufaDHzVV3E0juwmoIpvlK3rcIAjA5bFuqhiQt49AvZvG9jDbFr_C02gMxlbZS0YqiUk6Qkr6mj2R50H6HkA3UOzlNM4GXkAIZ23pooeuSfV2FqAnNAg5hMsLtiP2clpIk7fus3v1axp629A3754syIlA7v0nI7gGFffLcCopP4lmBGMSoFrNTY9TA5N2kljw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-ink/80 via-transparent to-transparent flex items-end p-space-sm">
+<span class="text-on-primary font-label-md text-label-md font-semibold">Parish Roof Truss Renovation</span>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden shadow-sm aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Vibrant outdoor youth camp assembly around a tranquil lake basin in Naivasha Kenya with community members engaged in fellowship and leadership workshops. Warm afternoon sun with natural tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKVYQK-rIrPNu71SalnAMeM60nVSGG2V_3X4i7rZ0iFp90dFvnb3LMkSiSciEhR728zhHYao5DwG2wBY2F22tQ6S07WvyHoeJgxANfGQNpb7iTcuAvrYHnvaD5ogyekKAZXgKO31mzUv464CfPWkNwqF_VzIBeHQzyserPA9VEEv-JcaQ0VvLeOGt6uzSMmmKNTDkqySGgrmX5nPDHUnoa5ImskK8oZ0w_snQbqRPv9FuAxExv7q7SWg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-ink/80 via-transparent to-transparent flex items-end p-space-sm">
+<span class="text-on-primary font-label-md text-label-md font-semibold">Youth Leadership Summit</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: Create New Collection (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-slate-ink/60 backdrop-blur-xs flex items-center justify-center p-space-md hidden" id="new-collection-modal">
+<div class="bg-surface-panel rounded-2xl shadow-xl w-full max-w-xl overflow-hidden flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<div class="px-space-lg py-space-md bg-surface-panel flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">add_task</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-slate-ink font-bold">Create Collection Campaign</h3>
+<p class="font-body-sm text-body-sm text-slate-subtle">Set up targets, payment links, and instant M-Pesa tracking.</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas hover:text-slate-ink" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<form class="p-space-lg space-y-space-md overflow-y-auto" id="create-collection-form">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Event / Campaign Title</label>
+<input class="w-full h-11 px-3 bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none" placeholder="e.g. Annual Thanksgiving Harvest 2026" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Target Amount Per Contributor</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-md text-label-md text-slate-subtle">KES</span>
+<input class="w-full h-11 pl-12 pr-3 bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none" placeholder="2,500" required="" type="number"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Overall Goal Quota</label>
+<div class="relative flex items-center">
+<span class="absolute left-3 font-label-md text-label-md text-slate-subtle">KES</span>
+<input class="w-full h-11 pl-12 pr-3 bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none" placeholder="200,000" type="number"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Deadline for Contributions</label>
+<input class="w-full h-11 px-3 bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none" type="date" value="2026-09-30"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Category Classification</label>
+<select class="w-full h-11 px-3 bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none">
+<option>Events & Retreats</option>
+<option>Building & Capital Project</option>
+<option>Benevolence & Welfare</option>
+<option>Youth Fellowship</option>
+</select>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Custom Payment URL Slug</label>
+<div class="flex items-center bg-surface-canvas rounded-lg overflow-hidden">
+<span class="px-3 text-slate-subtle font-tabular-mono text-tabular-mono bg-surface-container py-2.5">collecta.co/pay/</span>
+<input class="w-full h-11 px-3 bg-transparent text-slate-ink font-tabular-mono text-tabular-mono focus:outline-none" placeholder="thanksgiving-harvest-2026" type="text"/>
+</div>
+</div>
+<!-- Automation Controls -->
+<div class="p-space-sm bg-mint-surface rounded-xl space-y-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">bolt</span>
+<div>
+<span class="font-label-md text-label-md text-slate-ink">Auto-Dispatch STK Push Prompts</span>
+<p class="font-body-sm text-body-sm text-slate-subtle">Triggers mobile PIN prompt to unpaid registered members 48h prior to deadline.</p>
+</div>
+</div>
+<input checked="" class="w-5 h-5 accent-emerald-deep rounded" type="checkbox"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm">
+<button class="h-11 px-space-md bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-lg text-label-lg rounded-xl transition-colors" id="cancel-modal-btn" type="button">
+            Cancel
+          </button>
+<button class="h-11 px-space-lg bg-primary-container hover:bg-emerald-hover text-on-primary font-label-lg text-label-lg rounded-xl shadow-md transition-all" type="submit">
+            Launch Collection
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL: Bulk STK Push Execution Panel -->
+<div class="fixed inset-0 z-50 bg-slate-ink/60 backdrop-blur-xs flex items-center justify-center p-space-md hidden" id="stk-trigger-dialog">
+<div class="bg-surface-panel rounded-2xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col">
+<div class="p-space-lg bg-surface-panel flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-status-matched-text">
+<span class="material-symbols-outlined text-[24px]">phonelink_ring</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-slate-ink font-bold">M-Pesa STK Push Broadcaster</h3>
+<p class="font-body-sm text-body-sm text-slate-subtle">Ngong Hills Trip (22 Unpaid Members)</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas" onclick="document.getElementById('stk-trigger-dialog').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg space-y-space-md">
+<div class="p-space-sm bg-surface-canvas rounded-xl space-y-2">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-slate-subtle">
+<span>Payload Amount:</span>
+<span class="font-bold text-slate-ink">KES 3,000 / member</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-slate-subtle">
+<span>Target Recipient Queue:</span>
+<span class="font-bold text-primary">22 Active Kenyan Numbers (+254)</span>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-slate-subtle">
+<span>Daraja Merchant Till / Paybill:</span>
+<span class="font-bold text-slate-ink">PCEA Kimuchu (522522 / Acc: 12903)</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm text-slate-subtle uppercase">Notification Message Preview</label>
+<div class="p-3 bg-surface-canvas rounded-lg text-body-sm font-body-sm text-slate-ink italic">
+            "PCEA Kimuchu: You have a pending contribution of KES 3,000 for Ngong Hills Trip. Please enter your M-Pesa PIN on the prompt to complete registration."
+          </div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="w-1/2 h-11 bg-surface-canvas hover:bg-surface-container text-slate-ink font-label-lg text-label-lg rounded-xl transition-colors" onclick="document.getElementById('stk-trigger-dialog').classList.add('hidden')" type="button">
+            Dismiss
+          </button>
+<button class="w-1/2 h-11 bg-primary-container hover:bg-emerald-hover text-on-primary font-label-lg text-label-lg rounded-xl shadow-md flex items-center justify-center gap-1.5 transition-all" onclick="alert('STK Push requests dispatched successfully to 22 members via Safaricom Daraja API.'); document.getElementById('stk-trigger-dialog').classList.add('hidden');" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Dispatch All (22)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL: QR Code Preview -->
+<div class="fixed inset-0 z-50 bg-slate-ink/60 backdrop-blur-xs flex items-center justify-center p-space-md hidden" id="qr-modal-image">
+<div class="bg-surface-panel rounded-2xl shadow-xl w-full max-w-sm p-space-lg text-center space-y-space-md">
+<div class="flex justify-between items-center">
+<h4 class="font-headline-sm text-headline-sm text-slate-ink font-bold">M-Pesa Dynamic QR</h4>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-subtle hover:bg-surface-canvas" onclick="document.getElementById('qr-modal-image').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-space-lg bg-surface-canvas rounded-xl flex flex-col items-center justify-center">
+<!-- Crisp SVG QR Code Visualization -->
+<svg class="w-48 h-48 text-primary" fill="currentColor" viewbox="0 0 100 100">
+<rect fill="currentColor" height="28" rx="4" width="28" x="0" y="0"></rect>
+<rect fill="#FFFFFF" height="16" rx="2" width="16" x="6" y="6"></rect>
+<rect fill="currentColor" height="8" width="8" x="10" y="10"></rect>
+<rect fill="currentColor" height="28" rx="4" width="28" x="72" y="0"></rect>
+<rect fill="#FFFFFF" height="16" rx="2" width="16" x="78" y="6"></rect>
+<rect fill="currentColor" height="8" width="8" x="82" y="10"></rect>
+<rect fill="currentColor" height="28" rx="4" width="28" x="0" y="72"></rect>
+<rect fill="#FFFFFF" height="16" rx="2" width="16" x="6" y="78"></rect>
+<rect fill="currentColor" height="8" width="8" x="10" y="82"></rect>
+<!-- Data blocks -->
+<rect height="8" width="8" x="36" y="10"></rect>
+<rect height="8" width="8" x="48" y="10"></rect>
+<rect height="8" width="16" x="36" y="24"></rect>
+<rect height="8" width="16" x="10" y="38"></rect>
+<rect height="12" width="12" x="36" y="40"></rect>
+<rect height="8" width="16" x="56" y="38"></rect>
+<rect height="10" width="14" x="78" y="40"></rect>
+<rect height="18" width="8" x="36" y="60"></rect>
+<rect height="8" width="18" x="52" y="58"></rect>
+<rect height="16" width="8" x="52" y="74"></rect>
+<rect height="8" width="18" x="70" y="72"></rect>
+<rect height="6" width="12" x="80" y="88"></rect>
+</svg>
+<span class="font-tabular-mono text-tabular-mono text-slate-ink mt-3 font-semibold">SCAN WITH M-PESA APP</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-subtle">Church members can point their phone camera or M-Pesa App directly to initiate prompt.</p>
+<button class="w-full h-10 bg-primary-container text-on-primary font-label-md text-label-md rounded-xl" onclick="document.getElementById('qr-modal-image').classList.add('hidden')">
+        Done
+      </button>
+</div>
+</div>
+<script>
+    // Modal interactive triggers
+    const modal = document.getElementById('new-collection-modal');
+    const openBtn = document.getElementById('open-modal-btn');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const cancelBtn = document.getElementById('cancel-modal-btn');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
+    }
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+    if (cancelBtn && modal) {
+      cancelBtn.addEventListener('click', () => modal.classList.add('hidden'));
+    }
+
+    const form = document.getElementById('create-collection-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('New Collection launched successfully! Live link and STK trigger configured.');
+        modal.classList.add('hidden');
+      });
+    }
+
+    // Grid vs List View switcher toggle simulation
+    const gridBtn = document.getElementById('view-grid-btn');
+    const listBtn = document.getElementById('view-list-btn');
+    const container = document.getElementById('collections-container');
+
+    if (gridBtn && listBtn && container) {
+      listBtn.addEventListener('click', () => {
+        container.classList.remove('lg:grid-cols-2');
+        container.classList.add('grid-cols-1');
+        listBtn.classList.add('bg-surface-canvas', 'text-primary');
+        listBtn.classList.remove('text-slate-subtle');
+        gridBtn.classList.remove('bg-surface-canvas', 'text-primary');
+        gridBtn.classList.add('text-slate-subtle');
+      });
+
+      gridBtn.addEventListener('click', () => {
+        container.classList.add('lg:grid-cols-2');
+        container.classList.remove('grid-cols-1');
+        gridBtn.classList.add('bg-surface-canvas', 'text-primary');
+        gridBtn.classList.remove('text-slate-subtle');
+        listBtn.classList.remove('bg-surface-canvas', 'text-primary');
+        listBtn.classList.add('text-slate-subtle');
+      });
+    }
+  </script>
+</div></main></div></body></html>

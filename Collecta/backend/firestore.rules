@@ -1,0 +1,89 @@
+rules_version = '2';
+
+// ---------------------------------------------------------------------------
+// Collecta Firestore security rules
+//
+// Model: multi-tenant. Every authenticated admin/manager carries custom
+// claims { orgId, role } minted by the backend. Financial documents
+// (payments, callbacks, payment destinations' secrets) are written ONLY by
+// Cloud Functions via the Admin SDK, which bypasses these rules. Clients get
+// read access scoped to their organization and no direct write access to
+// money-bearing collections.
+// ---------------------------------------------------------------------------
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function claimOrg() {
+      return isSignedIn() ? request.auth.token.orgId : null;
+    }
+
+    function isMemberOfOrg(orgId) {
+      return isSignedIn() && claimOrg() == orgId;
+    }
+
+    function isOrgAdmin(orgId) {
+      return isMemberOfOrg(orgId) && request.auth.token.role == 'admin';
+    }
+
+    function isOrgStaff(orgId) {
+      return isMemberOfOrg(orgId)
+        && request.auth.token.role in ['admin', 'manager'];
+    }
+
+    // --- Users: a user may read their own profile; writes go through the backend.
+    match /users/{uid} {
+      allow read: if isSignedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // --- Organizations
+    match /organizations/{orgId} {
+      allow read: if isMemberOfOrg(orgId);
+      // Org profile/branding editable by admins; creation happens in backend.
+      allow update: if isOrgAdmin(orgId);
+      allow create, delete: if false;
+
+      // Payment destinations: shortcodes are staff-readable, but passkeys and
+      // writes are backend-only (secrets must not be set from the client).
+      match /paymentDestinations/{destId} {
+        allow read: if isOrgStaff(orgId);
+        allow write: if false;
+      }
+
+      // Members directory: staff can read and manage members.
+      match /members/{memberId} {
+        allow read: if isOrgStaff(orgId);
+        // Aggregate fields (totalContributed, lastContributionAt) are owned by
+        // the backend, so member writes are funnelled through callables.
+        allow write: if false;
+      }
+
+      // Events: staff read; managed via backend callables for consistency.
+      match /events/{eventId} {
+        allow read: if isOrgStaff(orgId);
+        allow write: if false;
+      }
+    }
+
+    // --- Payments: read within org, never client-writable.
+    match /payments/{paymentId} {
+      allow read: if isOrgStaff(resource.data.orgId);
+      allow write: if false;
+    }
+
+    // --- Payment links: staff read within org; created via backend.
+    match /paymentLinks/{linkId} {
+      allow read: if isOrgStaff(resource.data.orgId);
+      allow write: if false;
+    }
+
+    // --- Raw Daraja callbacks: backend only, never exposed to clients.
+    match /paymentCallbacks/{callbackId} {
+      allow read, write: if false;
+    }
+  }
+}

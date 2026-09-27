@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"mint-surface":"#ECFDF5","background":"#faf8ff","on-primary":"#ffffff","secondary-fixed":"#4dffb2","primary":"#004d27","slate-border":"#E2E8F0","on-secondary-container":"#007149","outline-variant":"#bec9be","status-pending-text":"#1D4ED8","surface-bright":"#faf8ff","on-secondary":"#ffffff","inverse-on-surface":"#eef0ff","on-error-container":"#93000a","tertiary-container":"#004fd1","tertiary-fixed-dim":"#b4c5ff","slate-subtle":"#64748B","on-primary-fixed":"#00210e","surface-container-high":"#e2e7ff","inverse-surface":"#283044","secondary":"#006c46","on-error":"#ffffff","error-container":"#ffdad6","on-surface-variant":"#3f4940","status-matched-bg":"#ECFDF5","secondary-fixed-dim":"#00e297","surface-container":"#eaedff","surface-container-lowest":"#ffffff","outline":"#6f7a70","on-tertiary":"#ffffff","on-surface":"#131b2e","status-discrepancy-text":"#B91C1C","surface-canvas":"#F8FAFC","status-discrepancy-bg":"#FEF2F2","mint-neon":"#00E599","surface-dim":"#d2d9f4","primary-container":"#006837","on-secondary-fixed-variant":"#005234","surface-tint":"#0b6d3b","secondary-container":"#3ffdae","on-tertiary-fixed":"#00174b","on-background":"#131b2e","primary-fixed-dim":"#83d99c","on-tertiary-container":"#c4d0ff","surface":"#faf8ff","on-primary-container":"#8ee4a6","on-tertiary-fixed-variant":"#003ea8","on-primary-fixed-variant":"#00522a","surface-container-highest":"#dae2fd","tertiary-fixed":"#dbe1ff","status-pending-bg":"#EFF6FF","emerald-hover":"#00522B","on-secondary-fixed":"#002112","surface-container-low":"#f2f3ff","inverse-primary":"#83d99c","surface-panel":"#FFFFFF","slate-ink":"#0F172A","error":"#ba1a1a","status-settled-bg":"#F8FAFC","primary-fixed":"#9ef6b6","surface-variant":"#dae2fd","status-settled-text":"#334155","status-matched-text":"#047857","emerald-deep":"#006837","tertiary":"#003a9f"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-mobile":"1rem","space-md":"1rem","space-sm":"0.5rem","gutter":"1.5rem","margin":"2rem","gutter-mobile":"0.75rem","space-xl":"2rem","space-lg":"1.5rem"},"fontFamily":{"currency-display":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Inter"],"headline-xl":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"tabular-mono":["Inter"],"body-md":["Inter"]},"fontSize":{"currency-display":["36px",{"lineHeight":"44px","letterSpacing":"-0.03em","fontWeight":"800"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-lg":["16px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"400"}],"headline-xl-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"800"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.025em","fontWeight":"700"}],"tabular-mono":["13px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"500"}],"body-md":["14px",{"lineHeight":"22px","letterSpacing":"-0.005em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-panel shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-panel"><img alt="Modern geometric fintech logo for Collecta featuring interlocking circular arcs and a reconciliation checkmark forming an open letter C, rendered in deep emerald green and vibrant mint.. Brand logo. - Primary color: #006837
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VPVOxYn8j5ejbvUr0LBv7-VlNHTq_krWwI4SSO6OBxDWqzDdA9AarAlV-g680pZwbxilJOT8KWd-R2Mb8q9TqT3DFK-9JDng7vf7DJyQDbtiDhvWmWkcDKrEZayKFjCi9Ok5CNcUXdngrY4zA9rgqHoqeJVLafNpH6BQtUcCMRDhr0iC_z0moPKi7hynNd1b7IWxiqhIg0My3_Vs33rZ2AZHKEt_EzxZbjcf0oYHou"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Collecta</span><span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">FinOps Engine</span></div></div><div class="px-space-md pt-space-sm pb-space-sm"><div class="p-space-sm bg-surface-canvas rounded-xl flex items-center justify-between shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="flex items-center gap-space-sm overflow-hidden"><div class="w-9 h-9 rounded-lg bg-mint-surface flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary text-[20px]">church</span></div><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-slate-ink truncate">PCEA Kimuchu</span><span class="font-label-sm text-label-sm text-slate-subtle truncate">Institutional Portal</span></div></div><span class="material-symbols-outlined text-slate-subtle text-[18px]">unfold_more</span></div></div><div class="px-space-md py-space-sm"><button class="w-full h-11 bg-primary-container hover:bg-emerald-hover text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-space-sm shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] transition-all" type="button"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>New Collection</span></button></div><nav class="px-space-md pt-space-sm space-y-1" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-xl"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="collections" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Collections</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="members" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Members</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="ledger" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Ledger</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary-container text-on-primary font-label-lg rounded-xl" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="flex flex-col"><div class="px-space-md py-space-sm space-y-1"><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" data-path="support" href="#"><span class="material-symbols-outlined text-[18px]">help_center</span><span>Support</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-status-discrepancy-bg hover:text-status-discrepancy-text transition-colors" data-path="logout" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span>Logout</span></a></div><div class="p-space-md bg-surface-canvas"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center font-headline-sm text-headline-sm text-on-primary shrink-0">S</div><div class="flex flex-col truncate"><span class="font-label-md text-label-md text-slate-ink truncate">Stephen Deron</span><span class="font-label-sm text-label-sm text-secondary uppercase font-semibold tracking-wider">Treasurer</span></div></div></div></div></aside><div class="pl-72 min-h-screen bg-surface flex flex-col"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-panel/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="Modern geometric fintech logo for Collecta featuring interlocking circular arcs and a reconciliation checkmark forming an open letter C, rendered in deep emerald green and vibrant mint.. Brand logo. - Primary color: #006837
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VPVOxYn8j5ejbvUr0LBv7-VlNHTq_krWwI4SSO6OBxDWqzDdA9AarAlV-g680pZwbxilJOT8KWd-R2Mb8q9TqT3DFK-9JDng7vf7DJyQDbtiDhvWmWkcDKrEZayKFjCi9Ok5CNcUXdngrY4zA9rgqHoqeJVLafNpH6BQtUcCMRDhr0iC_z0moPKi7hynNd1b7IWxiqhIg0My3_Vs33rZ2AZHKEt_EzxZbjcf0oYHou"/><div class="hidden sm:flex items-center gap-space-xs font-label-sm text-label-sm text-slate-subtle"><span class="hover:text-on-surface transition-colors">PCEA Kimuchu</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-slate-ink font-semibold">Audited Treasury Workspace</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-mint-neon"></span><span>M-Pesa STK Live</span></div><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface relative transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface flex-1"><div class="flex flex-col w-full">
+<div class="px-space-lg py-space-xl max-w-7xl mx-auto w-full space-y-space-xl">
+<!-- Header Section with Quick Stats & Breadcrumb Anchor -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-subtle">Core Governance</span>
+<span class="w-1 h-1 rounded-full bg-slate-subtle"></span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Live Sandbox v2.4</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-slate-ink tracking-tight">Settings & Integrations</h1>
+<p class="font-body-md text-body-md text-slate-subtle max-w-2xl">
+          Configure organization details, Safaricom Daraja M-Pesa credentials, payout bank accounts, and WhatsApp ledger formatting.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto bg-surface-canvas p-1.5 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-mint-surface text-status-matched-text font-label-md text-label-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint-neon opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+          Production Gateways Active
+        </div>
+<span class="font-tabular-mono text-tabular-mono text-slate-subtle px-2">ID: ORG-8821-KE</span>
+</div>
+</div>
+<!-- Navigation Tabs Bar -->
+<div class="bg-surface-panel p-1.5 rounded-2xl shadow-sm flex items-center overflow-x-auto gap-1">
+<button class="tab-btn flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-lg text-label-lg transition-all bg-primary-container text-on-primary shadow-sm" data-tab="profile" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Organization Profile</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-all" data-tab="mpesa" type="button">
+<span class="material-symbols-outlined text-[18px]">contactless</span>
+<span>M-Pesa & Payment Gateways</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-all" data-tab="whatsapp" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp Ledger Templates</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-all" data-tab="roles" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>User Roles & Treasurers</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-space-md py-2.5 rounded-xl font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-canvas hover:text-on-surface transition-all" data-tab="security" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Security & Audit Logs</span>
+</button>
+</div>
+<!-- Main Dynamic Container: Asymmetric Grid Layout -->
+<form class="space-y-space-xl" id="settings-form" onsubmit="event.preventDefault(); handleSave();">
+<!-- Section 1: Organization Profile -->
+<section class="bg-surface-panel rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">corporate_fare</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-slate-ink">Organization Profile</h2>
+<p class="font-body-sm text-body-sm text-slate-subtle">Primary corporate identification shown on public receipts and collection forms.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-slate-subtle self-start sm:self-auto bg-surface-canvas px-3 py-1 rounded-full">Sec-01 / Core Profile</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
+<!-- Logo & Institution Summary Card (4 cols) -->
+<div class="md:col-span-4 bg-surface-canvas rounded-xl p-space-md flex flex-col justify-between space-y-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-slate-subtle">Official Institution Emblem</span>
+<div class="mt-space-sm relative rounded-xl overflow-hidden aspect-[4/3] bg-surface-container flex items-center justify-center group shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern architectural photography of PCEA Kimuchu cathedral parish sanctuary in Kenya bathed in warm natural afternoon sunlight, showcasing dignified stonework and stained glass elements with lush green landscaping in high fidelity institutional documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBydr4q41EtpQ896kG5qkfLVGHAVAetVqMmHBGDGUAZQj9yMZYkwLzOnxPoPlYF8BPDtRiaR0TqZEK4exURciI5NonFRNcusAnS1LgWbKFCF3n_p22YEPD--II0kV3JXeNmVdnbCf0UzQ8dJ3Il6NX8ybuKqa1z1fB8r3TvVvpzEh-AU5fWC7l7nMmqUeYK_a3ruZPN-D_j0W6CAaQTUwt0gJKag_zrPuO8CxzcZulkj8rFzH71r9Ihzw"/>
+<div class="absolute inset-0 bg-slate-ink/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-xs">
+<button class="px-3 py-1.5 bg-surface-panel text-slate-ink rounded-lg font-label-md text-label-md flex items-center gap-1.5 shadow-md" type="button">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span> Update Logo
+                  </button>
+</div>
+</div>
+</div>
+<div class="bg-surface-panel p-space-sm rounded-lg space-y-1">
+<div class="flex justify-between items-center text-slate-subtle font-label-sm text-label-sm">
+<span>Registration Status</span>
+<span class="text-status-matched-text font-bold">Verified 501(c)(3)</span>
+</div>
+<div class="flex justify-between items-center text-slate-subtle font-label-sm text-label-sm">
+<span>Parish Ledger ID</span>
+<span class="font-tabular-mono text-slate-ink">KMC-9042</span>
+</div>
+</div>
+</div>
+<!-- Fields Grid (8 cols) -->
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Org Name -->
+<div class="sm:col-span-2 space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Organization Legal Name</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none transition-all placeholder-slate-subtle" type="text" value="PCEA Kimuchu Church"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-slate-subtle">verified</span>
+</div>
+</div>
+<!-- Org Type Dropdown -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Organization Classification</label>
+<div class="relative">
+<select class="w-full h-11 px-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none appearance-none cursor-pointer">
+<option selected="">Faith-Based / Church</option>
+<option>Chama / Investment Club</option>
+<option>NGO / Charitable Trust</option>
+<option>School Alumni Association</option>
+<option>Welfare Society</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-slate-subtle pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Currency -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Primary Operating Currency</label>
+<div class="relative">
+<select class="w-full h-11 px-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none appearance-none cursor-pointer">
+<option selected="">Kenyan Shilling (KES)</option>
+<option>US Dollar (USD)</option>
+<option>Ugandan Shilling (UGX)</option>
+<option>Tanzanian Shilling (TZS)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-slate-subtle pointer-events-none">payments</span>
+</div>
+</div>
+<!-- Contact Email -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Finance / Treasury Email</label>
+<div class="relative">
+<input class="w-full h-11 pl-10 pr-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none transition-all" type="email" value="treasury@pceakimuchu.org"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-slate-subtle">mail</span>
+</div>
+</div>
+<!-- Official Phone -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Official Verification Phone</label>
+<div class="relative">
+<input class="w-full h-11 pl-10 pr-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none transition-all" type="tel" value="+254 712 345 678"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-slate-subtle">phone_iphone</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Payment Gateway & Safaricom Daraja M-Pesa -->
+<section class="bg-surface-panel rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-slate-ink">Payment Gateway & M-Pesa Daraja 2.0 Integration</h2>
+<p class="font-body-sm text-body-sm text-slate-subtle">Active Safaricom API tunnel for real-time collections and bank settlement routing.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-auto px-3 py-1 rounded-full bg-mint-surface text-status-matched-text font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-mint-neon animate-pulse"></span>
+<span>Connected & Live</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Daraja Credentials Box -->
+<div class="space-y-1 bg-surface-canvas p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-slate-ink">Active Paybill / Till Number</label>
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase">C2B Sandbox/Live</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<div class="h-11 px-3 bg-surface-panel rounded-lg flex items-center justify-center font-currency-display text-headline-sm text-primary font-bold">
+                522522
+              </div>
+<input class="w-full h-11 px-3 bg-surface-panel rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none" placeholder="Account Reference prefix" type="text" value="PCEA-KIMUCHU"/>
+</div>
+<p class="font-body-sm text-body-sm text-slate-subtle pt-2">Mapped Safaricom Shortcode identifier linked to auto-reconciliation engine.</p>
+</div>
+<!-- Bank Settlement -->
+<div class="space-y-1 bg-surface-canvas p-space-md rounded-xl">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-slate-ink">B2C / Payout Bank Account</label>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Auto-Sweep</span>
+</div>
+<div class="mt-2 relative">
+<input class="w-full h-11 pl-10 pr-space-md bg-surface-panel rounded-lg text-slate-ink font-body-md text-body-md focus:outline-none cursor-default font-tabular-mono" readonly="" type="text" value="Co-operative Bank of Kenya - A/C ********4920"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-[18px] text-secondary">assured_workload</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-subtle pt-2">Direct treasury payout destination. Settlement clearance runs at 23:59 EAT daily.</p>
+</div>
+<!-- Visual Telemetry & API Latency Sparkline Card -->
+<div class="bg-surface-canvas p-space-md rounded-xl flex flex-col justify-between space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider">Gateway Latency</span>
+<span class="font-tabular-mono text-label-sm text-secondary font-bold">142ms avg</span>
+</div>
+<!-- SVG mini sparkline -->
+<div class="w-full h-12 flex items-end">
+<svg class="w-full h-10 text-secondary" fill="none" preserveaspectratio="none" viewbox="0 0 200 40">
+<path d="M0,32 Q25,28 50,30 T100,15 T150,22 T200,8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,32 Q25,28 50,30 T100,15 T150,22 T200,8 L200,40 L0,40 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+<div class="flex items-center justify-between text-slate-subtle font-label-sm text-label-sm">
+<span>99.98% Handshake Success</span>
+<button class="text-secondary font-semibold hover:underline" type="button">Test Ping</button>
+</div>
+</div>
+</div>
+<!-- STK Push Automation Toggle Ribbon -->
+<div class="bg-surface-canvas rounded-xl p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-mint-surface flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-slate-ink">Instant STK Push Dispatch Trigger</p>
+<p class="font-body-sm text-body-sm text-slate-subtle">Prompt members automatically on Safaricom handset when assigned or added to an active pledge drive.</p>
+</div>
+</div>
+<!-- Custom Controlled Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" id="stk-toggle" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-panel after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-surface-panel after:border-slate-border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</section>
+<!-- Section 3: WhatsApp Ledger Output Customization -->
+<section class="bg-surface-panel rounded-2xl p-space-lg md:p-space-xl shadow-sm space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-mint-surface flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">forum</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-slate-ink">WhatsApp Ledger Output Customization</h2>
+<p class="font-body-sm text-body-sm text-slate-subtle">Controls the automated daily and weekly financial bulletin pushed into parish leadership WhatsApp channels.</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-mint-surface px-3 py-1 rounded-full font-semibold">Meta Graph API v19</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Configuration Settings (7 cols) -->
+<div class="lg:col-span-7 space-y-space-md">
+<!-- Header Template -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Broadcast Header Structure</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none transition-all" id="wa-header-input" type="text" value="[EVENT NAME] - [ORGANIZATION NAME]"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-slate-subtle">title</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-subtle">Tokens: <span class="font-tabular-mono text-primary">[EVENT NAME]</span>, <span class="font-tabular-mono text-primary">[ORGANIZATION NAME]</span>, <span class="font-tabular-mono text-primary">[DATE]</span></p>
+</div>
+<!-- Toggles List -->
+<div class="space-y-space-sm pt-space-xs">
+<!-- Toggle 1 -->
+<div class="p-space-md bg-surface-canvas rounded-xl flex items-center justify-between">
+<div class="space-y-0.5 pr-4">
+<p class="font-label-md text-label-md text-slate-ink">Show Safaricom Receipt IDs in group text</p>
+<p class="font-body-sm text-body-sm text-slate-subtle">Publishes alphanumeric transaction hash (e.g. <span class="font-tabular-mono">SJJ89XZ920</span>) next to donor names for audit trail.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" id="toggle-receipts" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-panel after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle 2 -->
+<div class="p-space-md bg-surface-canvas rounded-xl flex items-center justify-between">
+<div class="space-y-0.5 pr-4">
+<p class="font-label-md text-label-md text-slate-ink">Include payment link at bottom of message</p>
+<p class="font-body-sm text-body-sm text-slate-subtle">Appends one-click STK push payment link (<span class="font-tabular-mono">collecta.ke/p/kmc</span>) to encourage pledge fulfillment.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" id="toggle-link" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-panel after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Signature -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-slate-ink">Ledger Footer Signature</label>
+<div class="relative">
+<input class="w-full h-11 px-space-md bg-surface-canvas rounded-lg text-slate-ink font-body-md text-body-md focus:bg-surface-panel focus:outline-none transition-all" id="wa-signature-input" type="text" value="Generated via Collecta Reconciliation Engine"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-[18px] text-slate-subtle">draw</span>
+</div>
+</div>
+</div>
+<!-- Realistic WhatsApp Live Message Preview (5 cols) -->
+<div class="lg:col-span-5 bg-surface-canvas rounded-xl p-space-md flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm text-slate-subtle uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">visibility</span> Live Preview
+                </span>
+<span class="font-label-sm text-label-sm bg-mint-surface text-secondary px-2 py-0.5 rounded font-bold">Group Message</span>
+</div>
+<!-- Phone simulation bubble -->
+<div class="bg-surface-panel p-space-md rounded-2xl shadow-sm text-slate-ink font-tabular-mono text-[12px] leading-relaxed space-y-2">
+<div class="font-bold text-primary font-body-md text-body-sm pb-1" id="preview-header">
+                  CHURCH EXPANSION DRIVE - PCEA KIMUCHU CHURCH
+                </div>
+<div class="text-slate-subtle font-label-sm text-label-sm">
+                  DATE: 24 OCT 2024 • 18:30 EAT
+                </div>
+<div class="bg-surface-canvas p-2.5 rounded-lg space-y-1 my-2">
+<div class="flex justify-between items-center text-slate-ink">
+<span>1. Grace Wambui (KMC-102)</span>
+<span class="font-bold text-secondary">KES 10,000</span>
+</div>
+<div class="text-[10px] text-slate-subtle" id="preview-receipt">
+                    REF: <span class="text-primary font-semibold">SKD9204JA1</span> • M-PESA MATCHED
+                  </div>
+</div>
+<div class="bg-surface-canvas p-2.5 rounded-lg space-y-1">
+<div class="flex justify-between items-center text-slate-ink">
+<span>2. David Kamau (KMC-084)</span>
+<span class="font-bold text-secondary">KES 5,000</span>
+</div>
+<div class="text-[10px] text-slate-subtle">
+                    REF: <span class="text-primary font-semibold">SLR4829PB9</span> • M-PESA MATCHED
+                  </div>
+</div>
+<div class="pt-2 flex justify-between font-bold text-slate-ink">
+<span>TOTAL RECONCILED:</span>
+<span class="text-primary">KES 15,000</span>
+</div>
+<div class="text-[11px] text-tertiary underline pt-1.5" id="preview-link">
+                  👉 Click to contribute via M-Pesa STK: https://collecta.ke/p/kmc
+                </div>
+<div class="text-[10px] text-slate-subtle pt-2 text-right italic" id="preview-signature">
+                  Generated via Collecta Reconciliation Engine
+                </div>
+</div>
+</div>
+<div class="mt-space-md text-center">
+<button class="w-full py-2 bg-surface-panel hover:bg-surface text-slate-ink rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">send</span>
+                Send Test Broadcast to Treasurers
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Additional Contextual Card: Multi-Signatory Fiduciary Guard -->
+<section class="bg-mint-surface rounded-2xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-panel flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[28px]">shield</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-slate-ink font-bold">Dual-Signatory Fiduciary Protection Active</h3>
+<p class="font-body-sm text-body-sm text-slate-subtle">Changes to settlement accounts or shortcodes require cryptographic approval from at least two parish elders.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center ring-2 ring-surface-panel font-bold">SD</div>
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center ring-2 ring-surface-panel font-bold">MN</div>
+</div>
+<span class="font-label-sm text-label-sm text-slate-ink font-semibold">2 of 2 Keys Enrolled</span>
+</div>
+</section>
+<!-- Sticky Action Footer Bar -->
+<div class="sticky bottom-4 z-30 bg-surface-panel/95 backdrop-blur-md p-space-md rounded-2xl shadow-xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm text-slate-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">history</span>
+<span>Last updated today at 14:12 EAT by Stephen Deron (Treasurer)</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-space-lg h-11 bg-surface-canvas hover:bg-surface text-slate-ink font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-1.5 transition-all" id="discard-btn" type="button">
+<span>Discard Changes</span>
+</button>
+<button class="flex-1 sm:flex-none px-space-xl h-11 bg-primary-container hover:bg-emerald-hover text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all" id="save-btn" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Save Configurations</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<script>
+  // Tab Switching Micro-interaction
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        b.classList.add('text-on-surface-variant', 'hover:bg-surface-canvas', 'hover:text-on-surface');
+      });
+      btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-canvas', 'hover:text-on-surface');
+    });
+  });
+
+  // Real-time WhatsApp Preview Syncing
+  const headerInput = document.getElementById('wa-header-input');
+  const previewHeader = document.getElementById('preview-header');
+  if (headerInput && previewHeader) {
+    headerInput.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      previewHeader.textContent = val ? val.replace('[EVENT NAME]', 'CHURCH EXPANSION DRIVE').replace('[ORGANIZATION NAME]', 'PCEA KIMUCHU CHURCH') : 'LEADERSHIP REPORT';
+    });
+  }
+
+  const sigInput = document.getElementById('wa-signature-input');
+  const previewSig = document.getElementById('preview-signature');
+  if (sigInput && previewSig) {
+    sigInput.addEventListener('input', (e) => {
+      previewSig.textContent = e.target.value || 'Generated via Collecta Reconciliation Engine';
+    });
+  }
+
+  const toggleReceipts = document.getElementById('toggle-receipts');
+  const previewReceipt = document.getElementById('preview-receipt');
+  if (toggleReceipts && previewReceipt) {
+    toggleReceipts.addEventListener('change', (e) => {
+      previewReceipt.style.display = e.target.checked ? 'block' : 'none';
+    });
+  }
+
+  const toggleLink = document.getElementById('toggle-link');
+  const previewLink = document.getElementById('preview-link');
+  if (toggleLink && previewLink) {
+    toggleLink.addEventListener('change', (e) => {
+      previewLink.style.display = e.target.checked ? 'block' : 'none';
+    });
+  }
+
+  // Save Feedback
+  function handleSave() {
+    const saveBtn = document.getElementById('save-btn');
+    if (!saveBtn) return;
+    const originalText = saveBtn.innerHTML;
+    saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Saving...</span>';
+    saveBtn.disabled = true;
+    setTimeout(() => {
+      saveBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Saved Successfully</span>';
+      saveBtn.classList.add('bg-secondary');
+      setTimeout(() => {
+        saveBtn.innerHTML = originalText;
+        saveBtn.classList.remove('bg-secondary');
+        saveBtn.disabled = false;
+      }, 2000);
+    }, 800);
+  }
+
+  const discardBtn = document.getElementById('discard-btn');
+  if (discardBtn) {
+    discardBtn.addEventListener('click', () => {
+      const form = document.getElementById('settings-form');
+      if (form) form.reset();
+    });
+  }
+</script></main></div></body></html>

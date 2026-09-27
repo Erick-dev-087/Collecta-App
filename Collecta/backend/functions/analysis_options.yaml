@@ -1,0 +1,15 @@
+include: package:lints/recommended.yaml
+
+analyzer:
+  errors:
+    # Handlers intentionally register many closures; allow flexible typing
+    # around the experimental Admin SDK surface.
+    inference_failure_on_function_invocation: ignore
+  exclude:
+    - .dart_tool/**
+    - build/**
+
+linter:
+  rules:
+    prefer_final_locals: true
+    avoid_print: false

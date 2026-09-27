@@ -1,0 +1,15 @@
+# Dart / build output
+.dart_tool/
+build/
+.packages
+pubspec.lock
+
+# Firebase local
+.env
+.env.local
+*.log
+firebase-debug.log
+ui-debug.log
+firestore-debug.log
+.runtimeconfig.json
+serviceAccountKey.json
