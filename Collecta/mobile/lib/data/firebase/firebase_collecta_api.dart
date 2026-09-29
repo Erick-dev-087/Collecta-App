@@ -235,12 +235,12 @@ class FirebaseCollectaApi implements CollectaApi {
     int activeCollections = 0;
 
     for (final c in collections) {
-      if (c.status == CollectionStatus.active) activeCollections++;
+      if (c.status == EventStatus.active) activeCollections++;
     }
 
     final recent = <RecentTransaction>[];
     final sortedPayments = List<Payment>.from(payments)
-      ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+      ..sort((a, b) => b.initiatedAt.compareTo(a.initiatedAt));
 
     final collectionTitles = {
       for (final c in collections) c.id: c.title,
@@ -253,7 +253,7 @@ class FirebaseCollectaApi implements CollectaApi {
       }
       if (recent.length < 5) {
         recent.add(RecentTransaction(
-          name: p.payerName ?? p.payerPhone ?? 'Unknown',
+          name: p.payerName ?? p.phone,
           collection: collectionTitles[p.eventId] ?? 'Collection',
           amount: p.amount,
           status: p.status,
@@ -272,7 +272,7 @@ class FirebaseCollectaApi implements CollectaApi {
         title: c.title,
         collected: c.totalCollected,
         target: c.targetAmount ?? 0,
-        contributors: c.uniqueContributors,
+        contributors: c.contributorCount,
       ));
     }
 
