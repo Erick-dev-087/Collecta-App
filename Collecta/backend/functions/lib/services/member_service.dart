@@ -22,7 +22,7 @@ class MemberService {
 
     final existing = await ctx
         .members(orgId)
-        .where('phone', '==', phone)
+        .where('phone', WhereFilter.equal, phone)
         .limit(1)
         .get();
     if (existing.docs.isNotEmpty) {
@@ -191,7 +191,7 @@ class MemberService {
     final normalized = normalizePhone(phone);
     final existing = await ctx
         .members(orgId)
-        .where('phone', '==', normalized)
+        .where('phone', WhereFilter.equal, normalized)
         .limit(1)
         .get();
     if (existing.docs.isNotEmpty) return existing.docs.first.id;

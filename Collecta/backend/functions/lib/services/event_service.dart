@@ -86,7 +86,7 @@ class EventService {
   Future<Map<String, dynamic>> analytics(String orgId, String eventId) async {
     final event = await get(orgId, eventId);
     final paymentsSnap =
-        await ctx.payments.where('eventId', '==', eventId).get();
+        await ctx.payments.where('eventId', WhereFilter.equal, eventId).get();
 
     num totalCollected = 0;
     var completed = 0, pending = 0, failed = 0;

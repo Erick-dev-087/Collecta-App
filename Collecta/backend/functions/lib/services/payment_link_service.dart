@@ -57,7 +57,7 @@ class PaymentLinkService {
 
   Future<List<Map<String, dynamic>>> list(String orgId) async {
     final snap =
-        await ctx.paymentLinks.where('orgId', '==', orgId).get();
+        await ctx.paymentLinks.where('orgId', WhereFilter.equal, orgId).get();
     final list = snap.docs.map((d) => <String, dynamic>{'id': d.id, ...?d.data()}).toList();
     list.sort((a, b) => '${b['createdAt']}'.compareTo('${a['createdAt']}'));
     return list;
