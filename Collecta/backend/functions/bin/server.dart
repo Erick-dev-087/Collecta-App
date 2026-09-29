@@ -133,7 +133,7 @@ Middleware _authMiddleware(AppContext ctx) {
         });
         return await innerHandler(updatedRequest);
       } catch (e) {
-        return errorResponse(401, 'Invalid or expired token');
+        return errorResponse(401, 'Invalid or expired token: $e');
       }
     };
   };
