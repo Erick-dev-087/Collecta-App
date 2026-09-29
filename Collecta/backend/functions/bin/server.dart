@@ -120,21 +120,23 @@ Middleware _authMiddleware(AppContext ctx) {
         return errorResponse(401, 'Missing or invalid Authorization header');
       }
       final token = authHeader.substring(7);
+      late final Map<String, dynamic> claims;
       try {
         // Verify the Firebase ID token and extract claims.
         final decoded = await ctx.auth.verifyIdToken(token);
-        final claims = <String, dynamic>{
+        claims = <String, dynamic>{
           'uid': decoded.uid,
           ...?decoded.claims,
         };
-        // Pass claims to the handler via request context.
-        final updatedRequest = request.change(context: {
-          'tokenClaims': claims,
-        });
-        return await innerHandler(updatedRequest);
       } catch (e) {
-        return errorResponse(401, 'Invalid or expired token: $e');
+        return errorResponse(401, 'Invalid or expired token');
       }
+
+      // Pass claims to the handler via request context.
+      final updatedRequest = request.change(context: {
+        'tokenClaims': claims,
+      });
+      return await innerHandler(updatedRequest);
     };
   };
 }
