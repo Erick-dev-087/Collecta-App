@@ -6,7 +6,7 @@ import 'mock/mock_collecta_api.dart';
 
 /// Flip to `false` once `firebase_options.dart` is generated, the Dart
 /// functions are deployed, and [FirebaseCollectaApi.functionsBaseUrl] is set.
-const bool useMock = true;
+const bool useMock = false; //Toggle to true if you want to use dummy data.
 
 /// The single backend gateway used across the app.
 final collectaApiProvider = Provider<CollectaApi>((ref) {

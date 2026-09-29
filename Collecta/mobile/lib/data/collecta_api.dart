@@ -65,6 +65,14 @@ abstract class CollectaApi {
     String? payerName,
   });
 
+  /// Record a manual cash payment.
+  Future<void> recordCash({
+    required String eventId,
+    required String phone,
+    required int amount,
+    String? payerName,
+  });
+
   /// Trigger STK for every member of [eventId] who has not fully paid.
   /// Returns the number of prompts dispatched.
   Future<int> triggerBulkStk(String eventId);

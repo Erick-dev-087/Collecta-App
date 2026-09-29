@@ -25,6 +25,19 @@ Router paymentRoutes(PaymentService payments) {
     return ok(result);
   });
 
+  router.post('/recordCash', (Request request) async {
+    final caller = requireCaller(getTokenClaims(request));
+    final data = await reqData(request);
+    final result = await payments.recordCash(
+      orgId: caller.orgId,
+      eventId: requireString(data['eventId'], 'eventId'),
+      phone: requireString(data['phone'], 'phone'),
+      amount: requirePositiveAmount(data['amount'], 'amount'),
+      payerName: optionalString(data['payerName'], 'payerName'),
+    );
+    return ok(result);
+  });
+
   router.post('/getPaymentStatus', (Request request) async {
     final caller = requireCaller(getTokenClaims(request));
     final data = await reqData(request);

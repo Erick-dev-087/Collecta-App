@@ -36,9 +36,7 @@ class CollectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = collection;
-    final closed = c.status == EventStatus.closed ||
-        c.status == EventStatus.cancelled ||
-        c.status == EventStatus.expired;
+    final closed = c.status == EventStatus.closed;
     final accent = closed
         ? AppColors.slateBorderStrong
         : (c.category == 'Youth & Camps'

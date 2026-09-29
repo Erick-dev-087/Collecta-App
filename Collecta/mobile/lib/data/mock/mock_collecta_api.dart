@@ -460,6 +460,50 @@ class MockCollectaApi implements CollectaApi {
     );
   }
 
+  @override
+  Future<void> recordCash({
+    required String eventId,
+    required String phone,
+    required int amount,
+    String? payerName,
+  }) async {
+    var member = _findByPhone(phone);
+    if (member == null) {
+      member = Member(
+        id: 'PCEA-${(_members.length + 1).toString().padLeft(3, '0')}',
+        fullName: (payerName != null && payerName.trim().isNotEmpty)
+            ? payerName.trim()
+            : phone,
+        phone: phone,
+        autoCreated: true,
+      );
+      _members.add(member);
+    }
+
+    final id = 'pay_${DateTime.now().millisecondsSinceEpoch}';
+    final at = DateTime.now();
+    _payments.insert(
+      0,
+      Payment(
+        id: id,
+        orgId: _orgId,
+        eventId: eventId,
+        memberId: member.id,
+        payerName: member.fullName,
+        phone: phone,
+        amount: amount,
+        status: PaymentStatus.completed,
+        checkoutRequestId: 'cash_$id',
+        initiatedAt: at,
+        completedAt: at,
+      ),
+    );
+    final mi = _members.indexWhere((m) => m.id == member.id);
+    if (mi >= 0) _members[mi] = _bumpMember(_members[mi], amount, at);
+    _recompute(eventId);
+    _emit();
+  }
+
   void _patchPayment(String id, Payment Function(Payment) update) {
     final i = _payments.indexWhere((p) => p.id == id);
     if (i >= 0) {

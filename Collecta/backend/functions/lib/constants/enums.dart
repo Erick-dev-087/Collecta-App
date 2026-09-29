@@ -28,6 +28,7 @@ class PaymentStatus {
 
 class PaymentChannel {
   static const String stkPush = 'stk_push';
+  static const String cash = 'cash';
 }
 
 class EventStatus {

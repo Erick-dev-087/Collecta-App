@@ -137,6 +137,60 @@ class PaymentService {
 
   // APPEND_MARKER
 
+  /// Record a manual cash payment.
+  Future<Map<String, dynamic>> recordCash({
+    required String orgId,
+    required String eventId,
+    required String phone,
+    required int amount,
+    String? payerName,
+  }) async {
+    final normalizedPhone = normalizePhone(phone);
+    final event = await events.get(orgId, eventId);
+    if (event['status'] == EventStatus.closed) {
+      failedPrecondition('This event is closed for contributions');
+    }
+
+    final resolvedAmount = requirePositiveAmount(amount, 'amount');
+
+    // Auto-register payer as a member.
+    final memberId =
+        await members.findOrCreateByPhone(orgId, normalizedPhone, name: payerName);
+
+    final paymentId = newId();
+    final ts = nowIso();
+    
+    await ctx.payments.doc(paymentId).set({
+      'orgId': orgId,
+      'eventId': eventId,
+      'memberId': memberId,
+      'paymentLinkId': null,
+      'channel': PaymentChannel.cash,
+      'payerName': payerName,
+      'phone': normalizedPhone,
+      'amount': resolvedAmount,
+      'status': PaymentStatus.completed,
+      'accountReference': 'Cash',
+      'mpesaReceiptNumber': null,
+      'checkoutRequestId': null,
+      'merchantRequestId': null,
+      'resultCode': 0,
+      'resultDesc': 'Manual cash entry',
+      'initiatedAt': ts,
+      'completedAt': ts,
+      'updatedAt': ts,
+    });
+
+    // Fold into member + event aggregates.
+    await members.applyContribution(orgId, memberId, resolvedAmount);
+    await events.applyCompletedPayment(orgId, eventId, resolvedAmount);
+
+    return {
+      'paymentId': paymentId,
+      'status': PaymentStatus.completed,
+    };
+  }
+
   /// Process an asynchronous Daraja STK callback. Idempotent: a repeated
   /// callback for an already-finalised payment is stored but does not
   /// double-count aggregates.

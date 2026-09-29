@@ -190,9 +190,38 @@ class _LedgerScreenState extends ConsumerState<LedgerScreen> {
             children: [
               Text(kes(c.totalCollected), style: AppType.currencyMd),
               Text('Reconciled', style: AppType.labelSm),
+              const SizedBox(height: 8),
+              OutlinedButton.icon(
+                onPressed: () => _showRecordCashSheet(context, c),
+                icon: const Icon(Icons.money, size: 16),
+                label: const Text('Add Cash'),
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size(0, 32),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                ),
+              ),
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  void _showRecordCashSheet(BuildContext context, Collection collection) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: AppColors.panel,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (ctx) => Padding(
+        padding: EdgeInsets.only(
+            bottom: MediaQuery.of(ctx).viewInsets.bottom,
+            left: AppSpacing.xl,
+            right: AppSpacing.xl,
+            top: AppSpacing.xl),
+        child: _RecordCashForm(collection: collection),
       ),
     );
   }
@@ -386,6 +415,128 @@ class _LedgerScreenState extends ConsumerState<LedgerScreen> {
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class _RecordCashForm extends ConsumerStatefulWidget {
+  const _RecordCashForm({required this.collection});
+  final Collection collection;
+
+  @override
+  ConsumerState<_RecordCashForm> createState() => _RecordCashFormState();
+}
+
+class _RecordCashFormState extends ConsumerState<_RecordCashForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _phoneController = TextEditingController();
+  final _amountController = TextEditingController();
+  final _nameController = TextEditingController();
+  bool _submitting = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.collection.defaultAmount != null) {
+      _amountController.text = widget.collection.defaultAmount.toString();
+    }
+  }
+
+  Future<void> _submit() async {
+    if (!_formKey.currentState!.validate()) return;
+    setState(() => _submitting = true);
+    try {
+      await ref.read(apiProvider).recordCash(
+            eventId: widget.collection.id,
+            phone: _phoneController.text.trim(),
+            amount: int.parse(_amountController.text.trim()),
+            payerName: _nameController.text.trim(),
+          );
+      if (mounted) {
+        Navigator.pop(context);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Cash payment recorded successfully.')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to record cash: $e')),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _submitting = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Record Cash', style: AppType.headlineSm),
+              IconButton(
+                icon: const Icon(Icons.close),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+          const SizedBox(height: AppSpacing.md),
+          TextFormField(
+            controller: _nameController,
+            decoration: const InputDecoration(
+              labelText: 'Payer Name (Optional)',
+              hintText: 'e.g. John Doe',
+            ),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          TextFormField(
+            controller: _phoneController,
+            decoration: const InputDecoration(
+              labelText: 'Phone Number',
+              hintText: '07XX XXX XXX',
+            ),
+            keyboardType: TextInputType.phone,
+            validator: (v) =>
+                v == null || v.isEmpty ? 'Phone number is required' : null,
+          ),
+          const SizedBox(height: AppSpacing.md),
+          TextFormField(
+            controller: _amountController,
+            decoration: const InputDecoration(
+              labelText: 'Amount (KES)',
+            ),
+            keyboardType: TextInputType.number,
+            validator: (v) {
+              if (v == null || v.isEmpty) return 'Amount is required';
+              if (int.tryParse(v) == null) return 'Enter a valid number';
+              return null;
+            },
+          ),
+          const SizedBox(height: AppSpacing.xl),
+          SizedBox(
+            width: double.infinity,
+            child: FilledButton(
+              onPressed: _submitting ? null : _submit,
+              style: FilledButton.styleFrom(padding: const EdgeInsets.all(16)),
+              child: _submitting
+                  ? const SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: CircularProgressIndicator(
+                          strokeWidth: 2, color: Colors.white))
+                  : const Text('Save Cash Entry'),
+            ),
+          ),
+          const SizedBox(height: AppSpacing.xl),
         ],
       ),
     );

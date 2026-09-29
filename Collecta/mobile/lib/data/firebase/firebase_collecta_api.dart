@@ -20,9 +20,8 @@ import '../models/payment.dart';
 class FirebaseCollectaApi implements CollectaApi {
   FirebaseCollectaApi({this.baseUrl = _placeholderBase});
 
-  /// e.g. https://your-app.onrender.com
   final String baseUrl;
-  static const _placeholderBase = 'https://your-app.onrender.com';
+  static const _placeholderBase = 'https://collecta-backend.onrender.com';
 
   final _changesCtrl = StreamController<void>.broadcast();
   @override
@@ -39,7 +38,9 @@ class FirebaseCollectaApi implements CollectaApi {
 
   /// Make an authenticated POST request to the backend API.
   Future<Map<String, dynamic>> _call(
-      String endpoint, [Map<String, dynamic>? data]) async {
+    String endpoint, [
+    Map<String, dynamic>? data,
+  ]) async {
     final token = await _getToken();
     final res = await http.post(
       Uri.parse('$baseUrl/api$endpoint'),
@@ -71,11 +72,15 @@ class FirebaseCollectaApi implements CollectaApi {
           .toList();
 
   @override
-  Future<AppUser> signIn(
-      {required String identifier, required String secret}) async {
+  Future<AppUser> signIn({
+    required String identifier,
+    required String secret,
+  }) async {
     // Firebase Auth owns credentials.
-    final cred = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(email: identifier, password: secret);
+    final cred = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: identifier,
+      password: secret,
+    );
     final profile = await _call('/auth/getProfile');
     _user = AppUser(
       uid: cred.user!.uid,
@@ -95,8 +100,10 @@ class FirebaseCollectaApi implements CollectaApi {
     required String phone,
     required String secret,
   }) async {
-    final cred = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email, password: secret);
+    final cred = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: email,
+      password: secret,
+    );
     await cred.user?.updateDisplayName(fullName);
 
     // Provision the org + admin profile in the backend.
@@ -170,8 +177,10 @@ class FirebaseCollectaApi implements CollectaApi {
 
   @override
   Future<List<Payment>> paymentHistory({String? eventId}) async {
-    final res = await _call('/payments/paymentHistory',
-        eventId != null ? {'eventId': eventId} : null);
+    final res = await _call(
+      '/payments/paymentHistory',
+      eventId != null ? {'eventId': eventId} : null,
+    );
     return _items(res).map(Payment.fromMap).toList();
   }
 
@@ -182,10 +191,7 @@ class FirebaseCollectaApi implements CollectaApi {
     int? amount,
     String? payerName,
   }) async {
-    final data = <String, dynamic>{
-      'eventId': eventId,
-      'phone': phone,
-    };
+    final data = <String, dynamic>{'eventId': eventId, 'phone': phone};
     if (amount != null) data['amount'] = amount;
     if (payerName != null) data['payerName'] = payerName;
     final res = await _call('/payments/initiatePayment', data);
@@ -194,6 +200,22 @@ class FirebaseCollectaApi implements CollectaApi {
       status: '${res['status'] ?? 'pending'}',
       customerMessage: '${res['customerMessage'] ?? ''}',
     );
+  }
+
+  @override
+  Future<void> recordCash({
+    required String eventId,
+    required String phone,
+    required int amount,
+    String? payerName,
+  }) async {
+    final data = <String, dynamic>{
+      'eventId': eventId,
+      'phone': phone,
+      'amount': amount,
+    };
+    if (payerName != null) data['payerName'] = payerName;
+    await _call('/payments/recordCash', data);
   }
 
   @override
