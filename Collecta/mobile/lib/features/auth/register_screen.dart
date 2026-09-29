@@ -104,7 +104,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                       : null,
                 ),
                 _field(
-                  label: 'Work email',
+                  label: 'Email',
                   controller: _email,
                   hint: 'treasury@org.co.ke',
                   keyboard: TextInputType.emailAddress,

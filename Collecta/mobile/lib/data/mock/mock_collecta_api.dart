@@ -498,7 +498,7 @@ class MockCollectaApi implements CollectaApi {
         completedAt: at,
       ),
     );
-    final mi = _members.indexWhere((m) => m.id == member.id);
+    final mi = _members.indexWhere((m) => m.id == member!.id);
     if (mi >= 0) _members[mi] = _bumpMember(_members[mi], amount, at);
     _recompute(eventId);
     _emit();

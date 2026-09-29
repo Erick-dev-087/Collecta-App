@@ -86,18 +86,18 @@ Future<void> main(List<String> args) async {
 
   // Mount authenticated API routes under /api
   final apiRouter = Router();
-  apiRouter.mount('/auth/', authRoutes(auth).call);
-  apiRouter.mount('/org/', orgRoutes(orgs).call);
-  apiRouter.mount('/members/', memberRoutes(members).call);
-  apiRouter.mount('/events/', eventRoutes(events).call);
-  apiRouter.mount('/payments/', paymentRoutes(payments).call);
-  apiRouter.mount('/links/', paymentLinkRoutes(links).call);
+  apiRouter.mount('/auth', authRoutes(auth).call);
+  apiRouter.mount('/org', orgRoutes(orgs).call);
+  apiRouter.mount('/members', memberRoutes(members).call);
+  apiRouter.mount('/events', eventRoutes(events).call);
+  apiRouter.mount('/payments', paymentRoutes(payments).call);
+  apiRouter.mount('/links', paymentLinkRoutes(links).call);
 
   // Mount public HTTP routes (no auth) at root
   app_router.mount('/', httpRoutes(payments, links).call);
 
   // Mount API routes with auth middleware
-  app_router.mount('/api/', _authMiddleware(ctx)(apiRouter.call));
+  app_router.mount('/api', _authMiddleware(ctx)(apiRouter.call));
 
   // Add CORS and error handling
   final handler = const Pipeline()

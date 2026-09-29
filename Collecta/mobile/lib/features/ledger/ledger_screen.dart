@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../data/api_provider.dart';
+
 import '../../data/models/analytics.dart';
 import '../../data/models/collection.dart';
 import '../../data/models/enums.dart';
@@ -448,7 +450,7 @@ class _RecordCashFormState extends ConsumerState<_RecordCashForm> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _submitting = true);
     try {
-      await ref.read(apiProvider).recordCash(
+      await ref.read(collectaApiProvider).recordCash(
             eventId: widget.collection.id,
             phone: _phoneController.text.trim(),
             amount: int.parse(_amountController.text.trim()),

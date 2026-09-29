@@ -125,7 +125,7 @@ class OrgService {
   Future<ResolvedDestination?> resolveDestination(String orgId) async {
     final snap = await ctx
         .paymentDestinations(orgId)
-        .where('isActive', WhereFilter.equal, true)
+        .where('isActive', '==', true)
         .get();
     if (snap.docs.isEmpty) return null;
     var chosen = snap.docs.first;

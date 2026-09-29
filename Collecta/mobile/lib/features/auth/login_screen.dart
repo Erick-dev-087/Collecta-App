@@ -36,6 +36,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             _identifier.text.trim(),
             _pin.text.trim(),
           );
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Could not sign in: $e')),
+        );
+      }
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -147,7 +153,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           const SizedBox(height: AppSpacing.lg),
           Row(
             children: [
-              Text(_useEmail ? 'Work Email' : 'Phone Number',
+              Text(_useEmail ? 'Email' : 'Phone Number',
                   style: AppType.labelMd),
               const Spacer(),
               GestureDetector(

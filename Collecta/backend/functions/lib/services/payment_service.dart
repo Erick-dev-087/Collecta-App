@@ -210,7 +210,7 @@ class PaymentService {
 
     if (cb.checkoutRequestId == null) return;
     final snap = await ctx.payments
-        .where('checkoutRequestId', WhereFilter.equal, cb.checkoutRequestId)
+        .where('checkoutRequestId', '==', cb.checkoutRequestId)
         .limit(1)
         .get();
     if (snap.docs.isEmpty) return; // unknown/foreign callback
@@ -274,8 +274,8 @@ class PaymentService {
     int limit = 100,
   }) async {
     final query = eventId != null
-        ? ctx.payments.where('eventId', WhereFilter.equal, eventId)
-        : ctx.payments.where('orgId', WhereFilter.equal, orgId);
+        ? ctx.payments.where('eventId', '==', eventId)
+        : ctx.payments.where('orgId', '==', orgId);
     final snap = await query.limit(limit).get();
     final list = snap.docs.map((d) => <String, dynamic>{'id': d.id, ...?d.data()}).toList();
     list.sort((a, b) => '${b['initiatedAt']}'.compareTo('${a['initiatedAt']}'));
@@ -286,7 +286,7 @@ class PaymentService {
   /// reconciliation.
   Future<List<Map<String, dynamic>>> listStuck(String orgId) async {
     final cutoff = isoMinutesAgo(stuckPaymentMinutes);
-    final snap = await ctx.payments.where('orgId', WhereFilter.equal, orgId).get();
+    final snap = await ctx.payments.where('orgId', '==', orgId).get();
     return snap.docs
         .map((d) => <String, dynamic>{'id': d.id, ...?d.data()})
         .where((p) =>

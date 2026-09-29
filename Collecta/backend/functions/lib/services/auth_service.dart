@@ -38,7 +38,7 @@ class AuthService {
     var slug = slugify(name);
     if (slug.isEmpty) slug = 'org';
     final clash =
-        await ctx.organizations.where('slug', WhereFilter.equal, slug).limit(1).get();
+        await ctx.organizations.where('slug', '==', slug).limit(1).get();
     if (clash.docs.isNotEmpty) slug = '$slug-${orgId.substring(0, 5).toLowerCase()}';
 
     final ts = nowIso();

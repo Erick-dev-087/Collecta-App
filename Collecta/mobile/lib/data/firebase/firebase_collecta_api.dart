@@ -21,7 +21,7 @@ class FirebaseCollectaApi implements CollectaApi {
   FirebaseCollectaApi({this.baseUrl = _placeholderBase});
 
   final String baseUrl;
-  static const _placeholderBase = 'https://collecta-backend.onrender.com';
+  static const _placeholderBase = 'https://collecta-app.onrender.com';
 
   final _changesCtrl = StreamController<void>.broadcast();
   @override
